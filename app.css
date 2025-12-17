@@ -1,14 +1,17 @@
 *{
-    box-sizing: border-box;
+    box-sizing: inherit;
     margin: 0;
 }
 body{
     font-size: 20px;
     background-color: #FCE4EC;
+    margin: 0;    
+    padding: 0;    
+    box-sizing: border-box;
 }
 
 .container{
-    width: 1216px;
+    max-width: 1200px; /* حداکثر عرض */
     margin-right: auto;
     margin-left: auto;
     margin-top: 56px;
@@ -136,6 +139,16 @@ body{
     object-fit: cover;
     border-radius: 16px;
 }
+/* برای موبایل */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  .container {
+    padding: 10px;
+  }
+}
+
 
 /* عنوان */
 .product-card h3 {
