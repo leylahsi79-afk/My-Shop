@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fn" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X_UA_Compatible" content="IE_edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My_Shop</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <div class="container">
+        <header class="head">
+            <div class="menu">
+                <h3 class="title-menu"> 
+                    <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    منو
+                </h3>
+            </div>
+            <div class="search">
+                <input id="searchInput" class="title-search" type="text" placeholder="جست و جوی محصولات">
+
+                <svg class="icon-search" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+            </div>
+            <div class="search-results" id="searchResults"></div>
+
+            <div class="shop">
+                <h3 class="title-shop"> 
+                    <svg class="icon-shop" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                    </svg>
+                    سبد خرید
+                </h3>
+            </div>
+            <div class="cart-menu">
+                <p>سبد خرید شما خالی است.</p>
+            </div>
+
+            
+        </header>
+        <main>
+            <section class="products">
+
+                <!-- محصول ۱ -->
+                <div onclick="location.href='product.html?id=40641'" class="product-card">
+                    <img src="lili_shop/40641.jpg" alt="محصول 1">
+                    <h3>بامبر فوتر کد 40641</h3>
+                    <p class="category"> کت فوتر</p>
+                    <p class="price">1.198.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+
+                <!-- محصول ۲ -->
+                <div onclick="location.href='product.html?id=40642'" class="product-card">
+                    <img src="lili_shop/40642.jpg" alt="محصول 2">
+                    <h3>بافت پاپیونی کد 40642</h3>
+                    <p class="category">بافت</p>
+                    <p class="price">898.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+
+                <!-- محصول ۳ -->
+                <div onclick="location.href='product.html?id=40643'" class="product-card">
+                    <img src="lili_shop/40643.jpg" alt="محصول 3">
+                    <h3>کت فوتر کد 40643</h3>
+                    <p class="category"> کت فوتر</p>
+                    <p class="price">1.198.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+
+                <!-- محصول ۴ -->
+                <div onclick="location.href='product.html?id=40644'" class="product-card">
+                    <img src="lili_shop/40644.jpg" alt="محصول 4">
+                    <h3>ست دورس شکلاتی کد 40644 </h3>
+                    <p class="category">ست </p>
+                    <p class="price">648.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40645'" class="product-card">
+                    <img src="lili_shop/40645.jpg" alt="محصول 5">
+                    <h3>ست هودی شلوار کد 40645 </h3>
+                    <p class="category">ست </p>
+                    <p class="price">848.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40646'" class="product-card">
+                    <img src="lili_shop/40646.jpg" alt="محصول 6">
+                    <h3>ترنچ کت کد 40646 </h3>
+                    <p class="category">ترنچ کت </p>
+                    <p class="price">998.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40647'" class="product-card">
+                    <img src="lili_shop/40647.jpg" alt="محصول 7">
+                    <h3>ترنچ کت کد 40647 </h3>
+                    <p class="category">ترنچ کت </p>
+                    <p class="price">1.098.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40648'" class="product-card">
+                    <img src="lili_shop/40648.jpg" alt="محصول 8">
+                    <h3>کراپ سویشرت کد 40648 </h3>
+                    <p class="category">هودی و دورس </p>
+                    <p class="price">898.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40649'" class="product-card">
+                    <img src="lili_shop/40649.jpg" alt="محصول 9">
+                    <h3>ست بافت و کلاه پینترستی کد 40649 </h3>
+                    <p class="category">ست </p>
+                    <p class="price">1.398.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40650'" class="product-card">
+                    <img src="lili_shop/40650.jpg" alt="محصول 10">
+                    <h3>هودی کراپ  کد 40650</h3>
+                    <p class="category">هودی </p>
+                    <p class="price">1.398.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40651'" class="product-card">
+                    <img src="lili_shop/40651.jpg" alt="محصول 11">
+                    <h3>پافر پفکی کد 40651 </h3>
+                    <p class="category">پافر </p>
+                    <p class="price">948.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40652'" class="product-card">
+                    <img src="lili_shop/40652.jpg" alt="محصول 12">
+                    <h3>کت فوتر کمر کش  کد 40652</h3>
+                    <p class="category">کت فوتر </p>
+                    <p class="price">1.248.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40653'" class="product-card">
+                    <img src="lili_shop/40653.jpg" alt="محصول 13">
+                    <h3>کت فوتر وارداتی  ZARA  کد 40653</h3>
+                    <p class="category">کت فوتر </p>
+                    <p class="price">2.398.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40654'" class="product-card">
+                    <img src="lili_shop/40654.jpg" alt="محصول 14">
+                    <h3>وست بوفالو وارداتی ZARA  کد 40654</h3>
+                    <p class="category">وست</p>
+                    <p class="price">1.998.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+
+                <div onclick="location.href='product.html?id=40655'" class="product-card">
+                    <img src="lili_shop/40655.jpg" alt="محصول 15">
+                    <h3>ست سویشرت شلوار وارداتی کد 40655 </h3>
+                    <p class="category">ست </p>
+                    <p class="price">1.698.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40656'" class="product-card">
+                    <img src="lili_shop/40656.jpg" alt="محصول 16">
+                    <h3>کت فوتر تندیس کد 40656 </h3>
+                    <p class="category">کت فوتر </p>
+                    <p class="price">1.498.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40657'" class="product-card">
+                    <img src="lili_shop/40657.jpg" alt="محصول 17">
+                    <h3>بافت وارداتی ZARA  کد 40657</h3>
+                    <p class="category">بافت </p>
+                    <p class="price">1.548.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40658'" class="product-card">
+                    <img src="lili_shop/40658.jpg" alt="محصول 18">
+                    <h3>پافر پفکی لیندا کد 40658 </h3>
+                    <p class="category">پافر </p>
+                    <p class="price">798.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+                <div onclick="location.href='product.html?id=40659'" class="product-card">
+                    <img src="lili_shop/40659.jpg" alt="محصول 19">
+                    <h3>کت بوفالو </h3>
+                    <p class="category">کاپشن </p>
+                    <p class="price">2.898.000 تومان</p>
+                    <button onclick="event.stopPropagation()">افزودن به سبد خرید</button>
+                </div>
+            </section>
+
+        </main>
+        <!-- پس زمینه تار منوی اصلی -->
+    
+    </div>
+    <div class="menu-overlay"></div>
+    <!-- منوی کشویی سمت راست -->
+    <div class="side-menu">
+    <div class="menu-header">
+        <h2>منو</h2>
+        <span class="close-menu">&times;</span>
+    </div>
+
+        <ul class="menu-list">
+            <li data-category="هودی و دورس">هودی و دورس</li>
+            <li  data-category="ترنچ کت">ترنچ کت</li>
+            <li data-category=" بافت">بافت</li>
+            <li data-category=" کت فوتر">کت فوتر</li>
+            <li data-category="کت چرم">کت چرم</li> 
+            <li data-category=" کاپشن">کاپشن</li>
+            <li data-category=" پافر">پافر</li>
+            <li data-category=" وست">وست</li>
+            <li data-category=" ست">ست</li>
+            <li>ثبت نام</li>
+            <li>پیگیری سفارش</li>
+            
+        </ul>
+    </div>
+
+      
+    </div>
+    <!-- پس‌زمینه تار وقتی منو باز است -->
+    <div class="overlay"></div>
+
+    <!-- منوی کشویی سمت چپ -->
+    <div class="side-cart">
+        <div class="cart-header">
+            <span class="close-cart">&times;</span>
+            <h2>سبد خرید</h2>
+        </div>
+
+        <div class="cart-content">
+            <p>سبد خرید شما خالی است.</p>
+        </div>
+    </div>
+    <!-- پس‌زمینه تار پاپ‌آپ -->
+    <div class="modal-overlay"></div>
+    <!-- فرم پاپ‌آپ ثبت‌نام -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-header">
+            <h2>ثبت نام</h2>
+            <span class="close-modal">&times;</span>
+        </div>
+        <form id="signup-form">
+            <div class="form-group">
+                <label>نام</label>
+                <input type="text" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label>نام خانوادگی</label>
+                <input type="text" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label>ایمیل</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>شماره تلفن</label>
+                <input type="tel" name="phone" required pattern="^09\d{9}$" placeholder="09xxxxxxxxx">
+            </div>
+            <div class="form-group">
+                <label>استان</label>
+                <select id="province" required>
+                    <option value="">انتخاب استان</option>
+                    <option value="tehran">تهران</option>
+                    <option value="isfahan">اصفهان</option>
+                    <option value="fars">فارس</option>
+                    <!-- بقیه استان‌ها را اضافه کنید -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label>شهر</label>
+                <select id="city" required>
+                    <option value="">ابتدا استان را انتخاب کنید</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>خیابان</label>
+                <input type="text" name="street" required>
+            </div>
+            <div class="form-group">
+                <label>پلاک</label>
+                <input type="text" name="number" required>
+            </div>
+            <div class="form-group">
+                <label>کد پستی</label>
+                <input type="text" name="postalCode" required pattern="^\d{10}$" placeholder="10 رقم">
+            </div>
+            <div class="form-group">
+                <label>رمز عبور</label>
+                <input type="password" name="password" required 
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).{8,}$" 
+                    placeholder="حداقل 8 کاراکتر با حرف بزرگ، کوچک، عدد و کاراکتر خاص">
+            </div>
+
+            <button type="submit">ثبت نام</button>
+        </form>
+        
+    </div>
+    <!-- پس‌زمینه تار پیگیری سفارش -->
+    <div class="order-overlay"></div>
+
+    <!-- پاپ‌آپ پیگیری سفارش -->
+    <div class="modal" id="order-modal">
+        <div class="modal-header">
+            <h2>پیگیری سفارش</h2>
+            <span class="close-order">&times;</span>
+        </div>
+
+        <form id="order-form">
+            <div class="form-group">
+                <label>شماره سفارش</label>
+                <input type="text" name="orderId" required>
+            </div>
+
+            <div class="form-group">
+                <label>ایمیل</label>
+                <input type="email" name="orderEmail" required>
+            </div>
+
+            <div class="form-group">
+                <label>شماره تلفن</label>
+                <input type="tel" name="orderPhone" required>
+            </div>
+
+            <button type="submit">جستجو</button>
+        </form>
+
+    <div id="order-result"></div>
+    </div>
+
+
+    <script>
+        const shopBtn = document.querySelector('.title-shop');
+        const sideCart = document.querySelector('.side-cart');
+        const overlay = document.querySelector('.overlay');
+        const closeCart = document.querySelector('.close-cart');
+
+        // باز کردن منوی سمت چپ
+        shopBtn.addEventListener('click', () => {
+            sideCart.style.left = "0";
+            overlay.style.display = "block";
+        });
+
+        // بستن با ضربدر
+        closeCart.addEventListener('click', () => {
+            sideCart.style.left = "-320px";
+            overlay.style.display = "none";
+        });
+
+        // بستن با کلیک روی پس زمینه
+        overlay.addEventListener('click', () => {
+            sideCart.style.left = "-320px";
+            overlay.style.display = "none";
+        });
+    </script>
+    <script>
+        const menuBtn = document.querySelector('.title-menu'); 
+        const sideMenu = document.querySelector('.side-menu');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        const closeMenu = document.querySelector('.close-menu');
+
+        // باز کردن منوی "منو"
+        menuBtn.addEventListener('click', () => {
+            sideMenu.style.right = "0";
+            menuOverlay.style.display = "block";
+        });
+
+        // بستن با ضربدر
+        closeMenu.addEventListener('click', () => {
+            sideMenu.style.right = "-300px";
+            menuOverlay.style.display = "none";
+        });
+
+        // بستن با کلیک روی پس زمینه
+        menuOverlay.addEventListener('click', () => {
+            sideMenu.style.right = "-300px";
+            menuOverlay.style.display = "none";
+        });
+    </script>
+    <script>
+    const signupModal = document.getElementById('signup-modal');
+    const modalOverlay = document.querySelector('.modal-overlay');
+    const closeModal = document.querySelector('.close-modal');
+    const signupForm = document.getElementById('signup-form');
+
+    // باز شدن فرم با کلیک روی "ثبت نام" در منو
+    const signupBtn = document.querySelector('.menu-list li:nth-child(10)');
+    signupBtn.addEventListener('click', () => {
+        signupModal.style.display = 'block';
+        modalOverlay.style.display = 'block';
+    });
+
+    // بستن فرم با ضربدر
+    closeModal.addEventListener('click', () => {
+        signupModal.style.display = 'none';
+        modalOverlay.style.display = 'none';
+    });
+
+    // بستن فرم با کلیک روی پس‌زمینه
+    modalOverlay.addEventListener('click', () => {
+        signupModal.style.display = 'none';
+        modalOverlay.style.display = 'none';
+    });
+
+    // استان → شهر
+    const province = document.getElementById('province');
+    const city = document.getElementById('city');
+
+    const cities = {
+        tehran: ["تهران", "ری", "اسلامشهر"],
+        isfahan: ["اصفهان", "کاشان", "نجف آباد"],
+        fars: ["شیراز", "مرودشت", "کازرون"]
+    };
+
+    province.addEventListener('change', () => {
+        city.innerHTML = '<option value="">انتخاب شهر</option>';
+        const selected = province.value;
+        if(cities[selected]) {
+            cities[selected].forEach(c => {
+                const opt = document.createElement('option');
+                opt.value = c;
+                opt.textContent = c;
+                city.appendChild(opt);
+            });
+        }
+    });
+
+    // اعتبارسنجی فرم
+    signupForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert("ثبت نام با موفقیت انجام شد!");
+        signupModal.style.display = 'none';
+        modalOverlay.style.display = 'none';
+    });
+    </script>
+
+    <script>
+    // 🔹 پیگیری سفارش
+    const orderBtn = document.querySelector('.menu-list li:nth-child(11)'); // "پیگیری سفارش"
+    const orderModal = document.getElementById('order-modal');
+    const orderOverlay = document.querySelector('.order-overlay');
+    const closeOrder = document.querySelector('.close-order');
+    const orderForm = document.getElementById('order-form');
+    const orderResult = document.getElementById('order-result');
+
+    orderBtn.addEventListener('click', () => {
+        orderModal.style.display = 'block';
+        orderOverlay.style.display = 'block';
+    });
+
+    closeOrder.addEventListener('click', () => {
+        orderModal.style.display = 'none';
+        orderOverlay.style.display = 'none';
+    });
+
+    orderOverlay.addEventListener('click', () => {
+        orderModal.style.display = 'none';
+        orderOverlay.style.display = 'none';
+    });
+
+    orderForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const orderId = orderForm.orderId.value.trim();
+        const orderEmail = orderForm.orderEmail.value.trim();
+        const orderPhone = orderForm.orderPhone.value.trim();
+
+        // 🔹 نمونه دیتابیس فرضی
+        const fakeDB = [
+            {id:"12345", email:"test@example.com", phone:"09123456789", status:["ثبت شد","در حال آماده سازی","ارسال شد"]},
+            {id:"67890", email:"user@domain.com", phone:"09111222333", status:["ثبت شد","ارسال شد"]}
+        ];
+
+        const order = fakeDB.find(o => o.id===orderId && o.email===orderEmail && o.phone===orderPhone);
+        if(order){
+            orderResult.innerHTML = `<strong>وضعیت سفارش:</strong><br>${order.status.join(" → ")}`;
+        } else {
+            orderResult.innerHTML = `<span style="color:red">سفارشی با این مشخصات یافت نشد!</span>`;
+        }
+    });
+
+    
+    </script>
+    <footer class="footer">
+    <div class="footer-content">
+        <p>تمامی حقوق محفوظ است © فروشگاه لی‌لی شاپ</p>
+        <div class="social">
+            <a href="#">Instagram</a>
+            <a href="#">Telegram</a>
+            <a href="#">WhatsApp</a>
+        </div>
+    </div>
+</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+
+searchInput.addEventListener("input", function () {
+    const value = this.value.trim();
+
+    if (value === "") {
+        searchResults.style.display = "none";
+        return;
+    }
+
+    const results = products.filter(p =>
+        p.title.includes(value) || String(p.id).includes(value)
+    );
+
+    if (results.length === 0) {
+        searchResults.innerHTML = "<div>محصولی یافت نشد</div>";
+    } else {
+        searchResults.innerHTML = results.map(p =>
+            `<div onclick="location.href='product.html?id=${p.id}'">
+                ${p.title} - ${p.id}
+            </div>`
+        ).join("");
+    }
+
+    searchResults.style.display = "block";
+});
+
+document.addEventListener("click", (e) => {
+    if (!searchInput.contains(e.target)) {
+        searchResults.style.display = "none";
+    }
+});
+</script>
+
+</body>
+</html>
