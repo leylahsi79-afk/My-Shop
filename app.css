@@ -1,0 +1,467 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-size: 20px;
+    background-color: #FCE4EC;
+}
+
+.container{
+    width: 1216px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 56px;
+
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.title-menu{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.title-menu:hover {
+    background-color: #F48FB1;
+    color: white;
+    border-radius: 6px;
+}
+.icon-menu{
+    width: 25px;
+    height: 25px;
+    margin-left: 5px ;
+}
+
+.search{
+    width: 500px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #9E9E9E;
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.title-search{
+    width: 450px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    padding-right: 10px;
+    background-color: #FCE4EC;
+}
+
+.icon-search{
+    width: 42px;
+    height: 42px;
+    border-right: 1px solid #9E9E9E ;
+    padding-left: 5px;
+}
+
+
+.title-shop{
+    display: flex;
+    align-items: center;
+}
+.icon-shop{
+    color: #E91E63;
+    width: 25px;
+    height: 25px;
+    margin-left: 5px ;
+}
+.title-shop {
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.title-shop:hover {
+    background-color: #F48FB1;
+    color: white;
+    border-radius: 6px;
+}
+
+.title-shop:hover .icon-shop {
+    color: white;
+}
+.cart-menu {
+    display: none; /* ابتدا مخفی */
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    width: 230px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 20;
+}
+/* گرید محصولات */
+.products {
+    max-width: 1200px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    
+}
+
+/* کارت محصول */
+
+.product-card {
+    background: white;
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+/* عکس محصول */
+.product-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* عنوان */
+.product-card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #222;
+    
+}
+
+/* دسته‌بندی */
+.product-card .category {
+    color: gray;
+    margin-bottom: 5px;
+}
+
+/* قیمت */
+.product-card .price {
+    font-weight: bold;
+    color: green;
+    margin: 8px 0;
+   
+}
+
+/* دکمه */
+.product-card button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 12px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.product-card button:hover {
+    background: #000;
+}
+
+/* پس زمینه تار */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    display: none;
+    z-index: 20;
+}
+
+/* منوی کشویی */
+.side-cart {
+    position: fixed;
+    top: 0;
+    left: -320px; /* پنهان باشد */
+    width: 320px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 30;
+    padding: 20px;
+}
+
+/* هدر منو */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-cart {
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-cart:hover {
+    color: red;
+}
+
+/* متن داخل منو */
+.cart-content {
+    margin-top: 20px;
+    font-size: 16px;
+}
+/* پس‌زمینه تار منوی اصلی */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    display: none;
+    z-index: 40;
+}
+
+/* منوی کشویی سمت راست */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* پنهان باشد */
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 50;
+    padding: 20px;
+}
+
+/* هدر منو */
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-menu {
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-menu:hover {
+    color: red;
+}
+
+.menu-list {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.menu-list li {
+    padding: 12px 0;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-bottom: 1px solid #eee;
+}
+
+.menu-list li:hover {
+    padding-right: 10px;
+    color: #F48FB1;
+}
+/* پس‌زمینه تار */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+/* خود پاپ‌آپ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    z-index: 101;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* هدر پاپ‌آپ */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-modal {
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background: #F48FB1;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background: #f06292;
+}
+/* پس‌زمینه تار پیگیری سفارش */
+.order-overlay {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+/* پاپ‌آپ پیگیری سفارش */
+#order-modal {
+    display: none;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    max-width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    z-index: 101;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.close-order{
+    cursor: pointer;
+    font-size: 28px;
+    float: left;
+}
+
+/* هدر پاپ‌آپ */
+#order-modal .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#order-modal .close-order {
+    cursor: pointer;
+    font-size: 28px;
+}
+
+#order-modal .form-group {
+    margin-bottom: 15px;
+}
+
+#order-modal .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#order-modal .form-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#order-modal button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    background: #F48FB1;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#order-result {
+    font-size: 16px;
+}
+.search-results {
+    position: absolute;
+    top: 50px;
+    background: #fff;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: none;
+    direction: rtl;
+    z-index: 999;
+}
+
+.search-results div {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.search-results div:hover {
+    background: #f5f5f5;
+}
+.footer{
+    background: #222;
+    color: #fff;
+    padding: 25px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.footer .social a{
+    color: #ffb6c1;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer .social a:hover{
+    text-decoration: underline;
+}
