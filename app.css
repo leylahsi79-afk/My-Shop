@@ -11,7 +11,7 @@ body{
 }
 
 .container{
-    max-width: 1200px; /* حداکثر عرض */
+    max-width: 1000px; /* حداکثر عرض */
     margin-right: auto;
     margin-left: auto;
     margin-top: 56px;
@@ -109,7 +109,7 @@ body{
 }
 /* گرید محصولات */
 .products {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 40px auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
