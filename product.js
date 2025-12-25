@@ -21,14 +21,7 @@ const products = [
         id: 40642,
         title: "بافت پاپیونی ",
         price: "898,000 تومان",
-        desc:  ` بافت دخترانه پاپیونی انتخابی فوق العاده
-         برای خانم های که به دنبال استایلی لطیف,دخترانه 
-         و متفاوت هستند.طراحی خاص این بافت
-          با جزییات پاپیونی,جلوه ای ظریف و رمانتیک به
-           استایل شما می بخشد
-           جنس بافت نرو ولطیف و گرم
-           قد بافت 50cm
-           سایز بافت فری سایز است مناسب برای 36 تا 44. `,
+        desc:  ` بافت دخترانه پاپیونی انتخابی فوق العاده برای خانم های که به دنبال استایلی لطیف,دخترانه  و متفاوت هستند.طراحی خاص این بافت با جزییات پاپیونی,جلوه ای ظریف و رمانتیک به  استایل شما می بخشد جنس بافت نرو ولطیف و گرم قد بافت 50 cm سایز بافت فری سایز است مناسب برای 36 تا 44. `,
            selectbox:"سفید",
         colors: [
             {img: "lili_shop/40642.jpg"},
@@ -272,6 +265,10 @@ if(product){
     document.getElementById("title").textContent = product.title;
     document.getElementById("price").textContent = product.price;
     document.getElementById("desc").textContent = product.desc.replace(/\n/g, "<br>");
+    document.getElementById("addToCartBtn").addEventListener("click", () => {
+    const qty = Number(document.getElementById("qty").value);
+    addToCart(product.id, qty);
+});
 
     const mainImage = document.getElementById("mainImage");
     mainImage.src = product.colors[0].img;
@@ -305,4 +302,10 @@ selectbox.addEventListener("change", () => {
 
     
 }
+const qtyInput = document.getElementById("qty");
+document.getElementById("plus").onclick = () => qtyInput.value++;
+document.getElementById("minus").onclick = () => {
+    if (qtyInput.value > 1) qtyInput.value--;
+};
+
 

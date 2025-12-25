@@ -214,6 +214,12 @@ body{
     padding: 20px;
 }
 
+/* improved cart layout */
+.side-cart {
+    display: flex;
+    flex-direction: column;
+}
+
 /* هدر منو */
 .cart-header {
     display: flex;
@@ -235,7 +241,35 @@ body{
 .cart-content {
     margin-top: 20px;
     font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* make content scrollable while header stays visible */
+    overflow: auto;
+    flex: 1 1 auto;
+    padding-right: 6px;
 }
+
+.cart-row{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    background: #fafafa;
+}
+.cart-row img{ width:64px; height:64px; object-fit:cover; border-radius:6px }
+.cart-info{ flex:1 }
+.cart-title{ font-weight:600 }
+.cart-price{ color:#666; margin-top:6px }
+.cart-actions{ display:flex; gap:6px; align-items:center }
+.cart-actions button{ padding:6px 8px; border-radius:6px; border:none; cursor:pointer }
+.cart-actions .cart-remove{ background:#ff6b81; color:#fff }
+.cart-actions .cart-inc, .cart-actions .cart-dec{ background:#eee }
+
+.cart-summary{ padding:10px 0; border-top:1px solid #eee; text-align:center }
+.side-cart .checkout-wrap{ padding-top:8px }
+.side-cart .checkout-wrap .cart-checkout{ background:#E91E63; color:#fff; border:none; padding:10px 14px; border-radius:8px; cursor:pointer }
 /* پس‌زمینه تار منوی اصلی */
 .menu-overlay {
     position: fixed;
@@ -477,4 +511,11 @@ button[type="submit"]:hover {
 
 .footer .social a:hover{
     text-decoration: underline;
+}
+#add-modal{
+    display:none;
+    text-align:center;
+}
+#add-modal button{
+    margin:10px;
 }

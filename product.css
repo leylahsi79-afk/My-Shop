@@ -86,4 +86,14 @@ body {
     padding: 10px 20px;
     cursor: pointer;
 }
+.qty-box{
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-bottom:15px;
+}
+.qty-box input{
+    width:50px;
+    text-align:center;
+}
 

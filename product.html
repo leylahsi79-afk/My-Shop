@@ -16,6 +16,7 @@
 
         <div class="info-box">
             <h2 id="title"></h2>
+          
             <p id="desc"></p>
             <h3 id="price"></h3>
             <label for="selectbox">رنگبندی</label>
@@ -25,11 +26,17 @@
             <br>
             <br>
             <br>
-            <button class="add-btn">افزودن به سبد خرید</button>
+            <div class="qty-box">
+                <button id="minus">-</button>
+                <input type="number" id="qty" value="1" min="1">
+                <button id="plus">+</button>
+            </div>
+
+            <button class="add-btn" id="addToCartBtn">افزودن به سبد خرید</button>
         </div>
 
     </div>
 
-<script src="product.js"></script>
+    <script src="product.js"></script>
 </body>
 </html>
