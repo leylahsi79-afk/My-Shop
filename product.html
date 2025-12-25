@@ -37,6 +37,22 @@
 
     </div>
 
+    <!-- Cart button -->
+    <div id="cartButton" class="cart-button">سبد خرید (<span id="cartCount">0</span>)</div>
+
+    <!-- Cart modal -->
+    <div id="cartModal" class="cart-modal hidden">
+        <div class="cart-panel">
+            <button id="closeCart" class="close-cart">بستن ✕</button>
+            <h3>سبد خرید</h3>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-footer">
+                <div>جمع کل: <span id="cartTotal">0</span></div>
+                <button id="checkoutBtn">تسویه حساب</button>
+            </div>
+        </div>
+    </div>
+
     <script src="product.js"></script>
 </body>
 </html>

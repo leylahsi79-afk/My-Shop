@@ -1,5 +1,6 @@
 // دیتابیس نمونه محصولات
-const products = [
+if (typeof products === 'undefined') {
+    var products = [
     {
         id: 40641,
         title: "بامبر فوتر",
@@ -250,7 +251,8 @@ const products = [
             {img:"lili_shop/40659.jpg"}
         ]
     },
-];
+    ];
+}
 
 
 // گرفتن ID از URL
@@ -264,11 +266,11 @@ const product = products.find(p => p.id === productId);
 if(product){
     document.getElementById("title").textContent = product.title;
     document.getElementById("price").textContent = product.price;
-    document.getElementById("desc").textContent = product.desc.replace(/\n/g, "<br>");
+    document.getElementById("desc").innerHTML = product.desc.replace(/\n/g, "<br>");
     document.getElementById("addToCartBtn").addEventListener("click", () => {
-    const qty = Number(document.getElementById("qty").value);
-    addToCart(product.id, qty);
-});
+        const qty = Number(document.getElementById("qty").value);
+        addToCart(product.id, qty);
+    });
 
     const mainImage = document.getElementById("mainImage");
     mainImage.src = product.colors[0].img;
@@ -307,5 +309,84 @@ document.getElementById("plus").onclick = () => qtyInput.value++;
 document.getElementById("minus").onclick = () => {
     if (qtyInput.value > 1) qtyInput.value--;
 };
+
+// --- Shopping cart logic (localStorage) ---
+function getCart(){
+    try{ return JSON.parse(localStorage.getItem('cart')||'[]'); }catch(e){ return []; }
+}
+function saveCart(cart){ localStorage.setItem('cart', JSON.stringify(cart)); }
+function parsePrice(str){ const n = Number(String(str).replace(/[^\d]/g,'')); return isNaN(n)?0:n; }
+function formatPrice(n){ return n.toLocaleString('fa-IR') + ' تومان'; }
+
+function renderCart(){
+    const items = getCart();
+    const container = document.getElementById('cartItems');
+    if(!container) return;
+    container.innerHTML = '';
+    let total = 0;
+    items.forEach(it => {
+        const row = document.createElement('div');
+        row.className = 'cart-item';
+        row.innerHTML = `
+            <img src="${it.img}" alt="">
+            <div class="meta">
+                <div class="title">${it.title}</div>
+                <div class="price">${it.price} × ${it.qty}</div>
+            </div>
+            <button class="remove" data-id="${it.id}">حذف</button>
+        `;
+        container.appendChild(row);
+        total += parsePrice(it.price) * Number(it.qty);
+    });
+    const totalEl = document.getElementById('cartTotal');
+    if(totalEl) totalEl.textContent = formatPrice(total);
+
+    container.querySelectorAll('.remove').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const id = Number(e.currentTarget.dataset.id);
+            removeFromCart(id);
+        });
+    });
+
+    updateCartCount();
+}
+
+function updateCartCount(){
+    const cntEl = document.getElementById('cartCount');
+    if(!cntEl) return;
+    const items = getCart();
+    const count = items.reduce((s,i)=>s + Number(i.qty), 0);
+    cntEl.textContent = count;
+}
+
+function addToCart(productId, qty=1){
+    const p = products.find(x => x.id === productId);
+    if(!p) return;
+    const cart = getCart();
+    const existing = cart.find(i => i.id === productId);
+    if(existing){ existing.qty = Number(existing.qty) + Number(qty); }
+    else{ cart.push({ id: p.id, title: p.title, price: p.price, img: (p.colors && p.colors[0]) ? p.colors[0].img : '', qty: Number(qty) }); }
+    saveCart(cart);
+    renderCart();
+    openCart();
+}
+
+function removeFromCart(id){
+    let cart = getCart();
+    cart = cart.filter(i => i.id !== id);
+    saveCart(cart);
+    renderCart();
+}
+
+function openCart(){ const modal = document.getElementById('cartModal'); if(modal) modal.classList.remove('hidden'); }
+function closeCart(){ const modal = document.getElementById('cartModal'); if(modal) modal.classList.add('hidden'); }
+
+// Attach cart button handlers and initialize
+document.addEventListener('DOMContentLoaded', () => {
+    const cartBtn = document.getElementById('cartButton'); if(cartBtn) cartBtn.addEventListener('click', openCart);
+    const closeBtn = document.getElementById('closeCart'); if(closeBtn) closeBtn.addEventListener('click', closeCart);
+    const checkout = document.getElementById('checkoutBtn'); if(checkout) checkout.addEventListener('click', () => { alert('فرآیند تسویه در این دمو فعال نیست.'); });
+    renderCart();
+});
 
 
