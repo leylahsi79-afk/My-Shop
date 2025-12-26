@@ -11,7 +11,7 @@ body{
 }
 
 .container{
-    max-width: 1000px; /* حداکثر عرض */
+    max-width: 1200px; /* حداکثر عرض */
     margin-right: auto;
     margin-left: auto;
     margin-top: 56px;
@@ -109,23 +109,24 @@ body{
 }
 /* گرید محصولات */
 .products {
-    max-width: 1000px;
-    margin: 40px auto;
+    /* max-width: 1200px;
+    margin: 40px auto; */
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
-    
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    padding: 20px;
 }
 
 /* کارت محصول */
 
 .product-card {
     background: white;
-    border-radius: 20px;
-    padding: 12px;
+    border-radius: 12px;
+    padding: 10px;
     box-shadow: 0 10px 30px rgba(0,0,0,.08);
     text-align: center;
     transition: 0.3s;
+    font-size: 13px;
 }
 
 .product-card:hover {
@@ -135,9 +136,9 @@ body{
 /* عکس محصول */
 .product-card img {
     width: 100%;
-    height: 320px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 16px;
+    border-radius: 10px;
 }
 /* برای موبایل */
 @media (max-width: 768px) {
@@ -177,11 +178,12 @@ body{
     background: black;
     color: white;
     border: none;
-    padding: 10px;
+    padding:6px 10px;
     width: 100%;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
+    margin-top: 6px;
 }
 
 .product-card button:hover {
