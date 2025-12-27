@@ -148,7 +148,7 @@ searchInput.addEventListener("input", () => {
         alert("ثبت نام با موفقیت انجام شد!");
         // signupModal.style.display = "none";
         // modalOverlay.style.display = "none";
-        closeSingup();
+        closeSingup();s
     });
 
 // -------- Sidebar cart rendering and sync --------
