@@ -498,11 +498,13 @@ button[type="submit"]:hover {
     background: #f5f5f5;
 }
 .footer{
+    
     background: #222;
     color: #fff;
     padding: 25px 0;
     text-align: center;
     margin-top: 40px;
+    margin-bottom: 50px;
 }
 
 .footer .social a{
@@ -521,3 +523,72 @@ button[type="submit"]:hover {
 #add-modal button{
     margin:10px;
 }
+.bottom-nav{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#FCE4EC;
+  display:flex;
+  justify-content:space-around;
+  padding:10px 0;
+  box-shadow:0 -2px 10px rgba(0,0,0,.1);
+  z-index:999;
+}
+.bottom-nav-shop{
+    display: grid;
+    justify-content: center;
+    border: none; 
+    text-align: center;
+    background: #F3E5F5;  
+}
+.bottom-nav-pro{
+    display: grid;
+    justify-content: center;
+    border: none;
+    text-align: center;
+    background: #F3E5F5;
+}
+.bottom-nav-follow{
+    display: grid;
+    justify-content: center;
+    border: none;
+    text-align: center;
+    background: #F3E5F5;
+}
+
+
+@media (max-width: 768px) {
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 0;
+    box-shadow: 0 -2px 10px rgba(0,0,0,.15);
+    z-index: 999;
+  }
+
+  .bottom-nav button {
+    background: none;
+    border: none;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .bottom-nav span {
+    font-size: 11px;
+    margin-top: 2px;
+  }
+
+  body {
+    padding-bottom: 60px; /* مهم */
+  }
+}
+

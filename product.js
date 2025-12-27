@@ -14,7 +14,7 @@ if (typeof products === 'undefined') {
         مناسب برای استفاده روزمره و نیمه رسمی
         قد محصول 55 cm است`,
         colors: [
-            {img: "lili_shop/40641.jpg"},
+            {img: "lili_shop/40641.jpg",name:"استخونی"},
         ]
     },
 
@@ -25,7 +25,7 @@ if (typeof products === 'undefined') {
         desc:  ` بافت دخترانه پاپیونی انتخابی فوق العاده برای خانم های که به دنبال استایلی لطیف,دخترانه  و متفاوت هستند.طراحی خاص این بافت با جزییات پاپیونی,جلوه ای ظریف و رمانتیک به  استایل شما می بخشد جنس بافت نرو ولطیف و گرم قد بافت 50 cm سایز بافت فری سایز است مناسب برای 36 تا 44. `,
            selectbox:"سفید",
         colors: [
-            {img: "lili_shop/40642.jpg"},
+            {img: "lili_shop/40642.jpg",name:"کرم"},
             
         ]
     },
@@ -40,7 +40,7 @@ if (typeof products === 'undefined') {
         سایز1 : مناسب 36 تا 40
         سایز2 : مناسب 40 تا 48 `,
         colors:[
-            {img:"lili_shop/40643.jpg"}
+            {img:"lili_shop/40643.jpg",name:"خاکی"}
         ]
     },
 
@@ -52,7 +52,7 @@ if (typeof products === 'undefined') {
         قد دورس 60cm
         فری سایز مناسب 36 تا 44`,
         colors:[
-            {img:"lili_shop/40644.jpg"}
+            {img:"lili_shop/40644.jpg" , name:"قهوه ای شکلاتی"}
         ]
     },
     {
@@ -64,7 +64,7 @@ if (typeof products === 'undefined') {
         فری سایز مناسب 36 تا 45
         مناسب فصل پاییز و زمستان`,
         colors:[
-            {img:"lili_shop/40645.jpg"}
+            {img:"lili_shop/40645.jpg",name:"سفید"}
         ]
     },
     {
@@ -76,9 +76,9 @@ if (typeof products === 'undefined') {
         سایز:فری سایز مناسب 36 تا 42
         قد محصول:50cm `,
         colors:[
-            {img:"lili_shop/40646.jpg"},
-            {img:"lili_shop/40646-2.jpg"},
-            {img:"lili_shop/40646-3.jpg"},
+            {img:"lili_shop/40646.jpg",name:"سبز تیره" ,},
+            {img:"lili_shop/40646-2.jpg",name:"کرمی"},
+            {img:"lili_shop/40646-3.jpg",name:"استخونی"},
             {img:"lili_shop/40646-4.jpg"},
             {img:"lili_shop/40646-5.jpg"}
         ]
@@ -257,7 +257,7 @@ if (typeof products === 'undefined') {
 
 // گرفتن ID از URL
 const urlParams = new URLSearchParams(window.location.search);
-const productId = Number(urlParams.get("id"));
+let productId = Number(urlParams.get("id"));
 
 const product = products.find(p => p.id === productId);
 
@@ -279,27 +279,11 @@ if(product){
 
    const selectbox = document.getElementById("selectbox");
 
-product.colors.forEach((color, index) => {
-    const thumb = document.createElement("img");
-    thumb.src = color.img;
-    thumb.className = "thumb";
-
-    thumb.onclick = () => {
-        mainImage.src = color.img;
-        selectbox.value = index;
-    };
-
-    colorsDiv.appendChild(thumb);
-
-    const opt = document.createElement("option");
-    opt.value = index;
-    opt.textContent = color.name ? color.name : `رنگ ${index + 1}`;
-    selectbox.appendChild(opt);
-});
-
-selectbox.addEventListener("change", () => {
-    const index = Number(selectbox.value);
-    mainImage.src = product.colors[index].img;
+product.colors.forEach((c, index) => {
+  const opt = document.createElement("option");
+  opt.value = index;
+  opt.textContent = c.name;
+  selectbox.appendChild(opt);
 });
 
     
@@ -388,5 +372,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkout = document.getElementById('checkoutBtn'); if(checkout) checkout.addEventListener('click', () => { alert('فرآیند تسویه در این دمو فعال نیست.'); });
     renderCart();
 });
+
 
 

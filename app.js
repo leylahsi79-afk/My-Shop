@@ -136,18 +136,19 @@ searchInput.addEventListener("input", () => {
     signupForm.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        const formData = {
+        const user = {
             firstName: signupForm.firstName.value,
             lastName: signupForm.lastName.value,
             email: signupForm.email.value,
             phone: signupForm.phone.value
         };
 
-        localStorage.setItem("user", JSON.stringify(formData));
+        localStorage.setItem("user", JSON.stringify(user));
 
         alert("ثبت نام با موفقیت انجام شد!");
-        signupModal.style.display = "none";
-        modalOverlay.style.display = "none";
+        // signupModal.style.display = "none";
+        // modalOverlay.style.display = "none";
+        closeSingup();
     });
 
 // -------- Sidebar cart rendering and sync --------
@@ -236,3 +237,6 @@ window.addEventListener('storage', (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     renderSideCart();
 });
+function addToCart(productId){
+    console.log("added:", productId);
+}

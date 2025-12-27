@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>پنل ادمین</title>
+  <style>
+    body{
+      font-family: sans-serif;
+      background:#ffe6ee;
+      padding:20px;
+    }
+    input, textarea, button{
+      width:100%;
+      margin-bottom:10px;
+      padding:8px;
+    }
+    button{
+      background:#e91e63;
+      color:#fff;
+      border:none;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+    <h2>افزودن محصول</h2>
+
+    <input id="title" placeholder="نام محصول">
+    <input id="price" placeholder="قیمت">
+    <textarea id="desc" placeholder="توضیحات"></textarea>
+    <input id="img" placeholder="آدرس عکس (مثلاً lili_shop/1.jpg)">
+
+    <button onclick="addProduct()">ثبت محصول</button>
+
+    <script>
+        function addProduct(){
+        const product = {
+            id: Date.now(),
+            title: title.value,
+            price: price.value,
+            desc: desc.value,
+            colors:[{img: img.value}]
+        };
+
+        let products = JSON.parse(localStorage.getItem("products")) || [];
+        products.push(product);
+        localStorage.setItem("products", JSON.stringify(products));
+
+        alert("محصول اضافه شد");
+        }
+    </script>
+
+</body>
+</html>

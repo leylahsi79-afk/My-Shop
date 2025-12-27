@@ -1,4 +1,6 @@
-const products = [
+
+let products = [
+    
     {
         id: 40641,
         title: "کت فوتر",
@@ -22,7 +24,7 @@ const products = [
            قد بافت 50cm
            سایز بافت فری سایز است مناسب برای 36 تا 44. `,
         colors: [
-            {img: "lili_shop/40642.jpg"},
+            {img: "lili_shop/40642.jpg",name:"کرم"},
             
         ]
     },
@@ -249,4 +251,9 @@ const products = [
             {img:"lili_shop/40659.jpg"},
         ]
     },
+
 ];
+const savedProducts = JSON.parse(localStorage.getItem("products"));
+    if (savedProducts && savedProducts.length > 0) {
+        products = products.concat(savedProducts);
+    }

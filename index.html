@@ -377,16 +377,27 @@
             });
         </script>
         <script>
-        
+        // const signupModal = document.getElementById('signup-modal');
+        // const modalOverlay = document.querySelector('.modal-overlay');
+        // const closeModal = document.querySelector('.close-modal');
+
         // باز شدن فرم با کلیک روی "ثبت نام" در منو
         const signupBtn = document.querySelector('.menu-list li:nth-child(10)');
         signupBtn.addEventListener('click', () => {
             signupModal.style.display = 'block';
             modalOverlay.style.display = 'block';
         });
+        
+        // // بستن فرم با ضربدر
+        // closeModal.addEventListener('click', ()=>{
+        // signupModal.style.display='none';
+        // modalOverlay.style.display='none';
+        // });
+        // modalOverlay.addEventListener('click', ()=>{
+        // signupModal.style.display='none';
+        // modalOverlay.style.display='none';
+        // });
 
-        // بستن فرم با ضربدر
-    
         
         // استان → شهر
         const province = document.getElementById('province');
@@ -466,9 +477,9 @@
         <div class="footer-content">
             <p>تمامی حقوق محفوظ است © فروشگاه لی‌لی شاپ</p>
             <div class="social">
-                <a href="#">Instagram</a>
-                <a href="#">Telegram</a>
-                <a href="#">WhatsApp</a>
+                <a href="https://instagram.com/leyla_.hsi" target="_blank">Instagram</a>
+                <a href="https://t.me/leilahsi" target="_blank">Telegram</a>
+                <a href="https://wa.me/09381301446" target="_blank">WhatsApp</a>
             </div>
         </div>
     </footer>
@@ -512,10 +523,15 @@
         <button onclick="openCart()">مشاهده سبد خرید</button>
         <button onclick="checkout()">نهایی کردن خرید</button>
     </div>
+    <div class="bottom-nav">
+        <button onclick="location.href='index.html'" class="bottom-nav-shop">🏠<span>فروشگاه</span></button>
+        <button onclick="openSignup()" class="bottom-nav-pro">👤<span>پروفایل</span></button>
+        <button onclick="openOrder()" class="bottom-nav-follow">📦<span>پیگیری</span></button>
+    </div>
+
     <script src="data.js"></script>
     <script src="app.js"></script>
     <script src="product.js" ></script>
-
 
 </body>
 </html>
