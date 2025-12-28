@@ -1,5 +1,5 @@
 
-let products = [
+const products = [
     
     {
         id: 40641,
@@ -7,7 +7,7 @@ let products = [
         price: "1,198,000 تومان",
         desc: "بامبر جکت دخترانه بسیار شیک پینترستی مناسب فصل پاییز  این محصول به صورت فری سایز طراحی شده و برای خانم هایی  که بین سایز 36 تا 42 هستند کاملا مناسب است  دور سینه با اندازه ی دور کمر در حالت کشسانی یکسان میباشد دارای آستر داخلی برای راحتی بیشتر طزاحی شیک و مدرن با رنگ بندی متنوع جنس با کیفیت از کرپ(لطافت,مقاومت,راحتی) مناسب برای استفاده روزمره و نیمه رسمی قد محصول 55 cm است",
         colors: [
-            {img: "lili_shop/40641.jpg"},
+            {img: "lili_shop/40641.jpg",name:"استخونی"},
         ]
     },
 
@@ -253,7 +253,3 @@ let products = [
     },
 
 ];
-const savedProducts = JSON.parse(localStorage.getItem("products"));
-    if (savedProducts && savedProducts.length > 0) {
-        products = products.concat(savedProducts);
-    }

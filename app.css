@@ -556,7 +556,8 @@ button[type="submit"]:hover {
     justify-content: center;
     border: none; 
     text-align: center;
-    background: #FCE4EC;  
+    background: #FCE4EC; 
+    font-size: 20px; 
 }
 .bottom-nav-pro{
     display: grid;
@@ -564,6 +565,7 @@ button[type="submit"]:hover {
     border: none;
     text-align: center;
     background: #FCE4EC;
+    font-size: 20px;
 }
 .bottom-nav-follow{
     display: grid;
@@ -571,6 +573,7 @@ button[type="submit"]:hover {
     border: none;
     text-align: center;
     background: #FCE4EC;
+    font-size: 20px;
 }
 
 
